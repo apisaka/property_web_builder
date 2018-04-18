@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-sm-6 hidden-xs contacto_header">
           <% if @current_agency.phone_number_primary %>
-            <i class="fa fa-phone-square fa-lg"></i><%= @current_agency.phone_number_primary %> &nbsp;&nbsp;          
+            <i class="fa fa-phone-square fa-lg"></i><%= @current_agency.phone_number_primary %> &nbsp;&nbsp;
           <% end %>
           <% if @current_agency.email_primary %>
             <i class="fa fa-envelope fa-lg"></i><%= @current_agency.email_primary %>
@@ -38,11 +38,12 @@
           <%= link_to pwb.root_path(locale: locale), class: "navbar-brand" do %>
             <% if @current_website.logo_url  %>
               <img src="<%= @current_website.logo_url %>" alt="Logo">
-            <% else %>
-              <div class="text-navbar-brand" style="">
-                <%= @current_agency.company_name %>
-              </div>
             <% end %>
+          <% end %>
+          <%= link_to pwb.root_path(locale: locale), class: "navbar-brand" do %>
+            <div class="text-navbar-brand" style="">
+              <%= @current_agency.company_name %>
+            </div>
           <% end %>
         </div>
         <div class="navbar-collapse collapse">
